@@ -30,13 +30,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "@/redux/userSlice";
 import { Toaster } from "@/components/ui/toaster";
 
-// Zod schema for validation
 const formSchema = z.object({
   email: z.string().email({
     message: "Enter valid email address",
   }),
   password: z.string().min(3, {
-    message: "Password should contain min 6 characters",
+    message: "Password should contain min 3 characters",
   }),
 });
 
@@ -64,7 +63,7 @@ function Login() {
         "http://localhost:3100/api/auth/login",
         formData,
         {
-          withCredentials: true, // Important for handling cookies
+          withCredentials: true, 
           headers: {
             "Content-Type": "application/json",
           },
@@ -101,9 +100,9 @@ function Login() {
     }
   };
   useEffect(() => {
-    // If user is already logged in, redirect to homepage
+   
     if (user || localStorage.getItem("authToken")) {
-      navigate("/"); // Redirect to homepage if logged in
+      navigate("/"); 
     }
   }, [user, navigate]);
 
