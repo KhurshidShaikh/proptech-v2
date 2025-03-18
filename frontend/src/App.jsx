@@ -29,7 +29,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 
 const router = createBrowserRouter([
   {
-    element: <Layout />, // Apply layout for these routes
+    element: <Layout />, 
     children: [
       {
         path: "/",

@@ -8,6 +8,7 @@ function Homepage() {
     <>
       <div className="container mx-auto max-w-[1300px] p-2">
         <CarouselSlider />
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 md:mt-8">
           <div>
             <SearchProperty />
